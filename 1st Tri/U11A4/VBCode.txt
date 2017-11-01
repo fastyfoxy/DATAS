@@ -1,0 +1,5 @@
+For I = 1 To 5
+     J = I * 3
+     Accum = Accum + J
+     Pic1.print I, J, Accum
+Next I
