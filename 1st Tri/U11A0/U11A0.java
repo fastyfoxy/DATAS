@@ -8,7 +8,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
 
-public class HuntTheWompus extends JApplet
+public class U11A0 extends JApplet
 {
 	private String wompus = " W ";
 	private String slimePit = " S ";
