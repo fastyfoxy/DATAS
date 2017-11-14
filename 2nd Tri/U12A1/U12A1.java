@@ -22,34 +22,27 @@ public class U12A1
 		evaluate(stack1, exp1);
 	}
 
-	public void evaluate(ArrayStack stack, String exp)
+	public void evaluate(ArrayStack arraystack, String str)
 	{
-		StringTokenizer st = new StringTokenizer(exp);
+		StringTokenizer st = new StringTokenizer(str);
 
 		while (st.hasMoreTokens())
 		{
-			if(st.nextToken().equals("+") || st.nextToken().equals("-") || st.nextToken().equals("*") ||st.nextToken().equals("/"))
-				stack.push(st.nextToken());
-			else
-			{
-
-			}
-			
 			if(st.nextToken().parseInt() instanceof Integer)
-				stack.push(st.nextToken());
+				arraystack.push(st.nextToken());
 			else
 			{
-				Integer operand2 = stack.pop();
-				Integer operand1 = stack.pop();
+				Integer operand2 = arraystack.pop();
+				Integer operand1 = arraystack.pop();
 				
 				if(st.nextToken().equals("+"))
-					stack.push(operand1+operand2);
+					arraystack.push(operand1+operand2);
 				if(st.nextToken().equals("-"))
-					stack.push(operand1-operand2);
+					arraystack.push(operand1-operand2);
 				if(st.nextToken().equals("*"))
-					stack.push(operand1*operand2);
+					arraystack.push(operand1*operand2);
 				if(st.nextToken().equals("/"))
-					stack.push(operand1/operand2);
+					arraystack.push(operand1/operand2);
 			}
 		}
 	}
