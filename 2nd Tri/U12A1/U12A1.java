@@ -34,6 +34,23 @@ public class U12A1
 			{
 
 			}
+			
+			if(st.nextToken().parseInt() instanceof Integer)
+				stack.push(st.nextToken());
+			else
+			{
+				Integer operand2 = stack.pop();
+				Integer operand1 = stack.pop();
+				
+				if(st.nextToken().equals("+"))
+					stack.push(operand1+operand2);
+				if(st.nextToken().equals("-"))
+					stack.push(operand1-operand2);
+				if(st.nextToken().equals("*"))
+					stack.push(operand1*operand2);
+				if(st.nextToken().equals("/"))
+					stack.push(operand1/operand2);
+			}
 		}
 	}
 }
