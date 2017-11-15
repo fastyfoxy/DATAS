@@ -20,6 +20,7 @@ public class U12A1
 	public U12A1()
 	{
 		evaluate(stack1, exp1);
+		evaluate(stack2, exp2);
 	}
 
 	public void evaluate(ArrayStack arraystack, String str)
@@ -32,18 +33,21 @@ public class U12A1
 				arraystack.push(st.nextToken());
 			else
 			{
-				Integer operand2 = arraystack.pop();
 				Integer operand1 = arraystack.pop();
+				Integer operand2 = arraystack.pop();
 				
 				if(st.nextToken().equals("+"))
-					arraystack.push(operand1+operand2);
+					arraystack.push(operand2+operand1);
 				if(st.nextToken().equals("-"))
-					arraystack.push(operand1-operand2);
+					arraystack.push(operand2-operand1);
 				if(st.nextToken().equals("*"))
-					arraystack.push(operand1*operand2);
+					arraystack.push(operand2*operand1);
 				if(st.nextToken().equals("/"))
-					arraystack.push(operand1/operand2);
+					arraystack.push(operand2/operand1);
 			}
 		}
+		
+		System.out.printf("%.1f", stack.peekTop());
+		System.out.println();
 	}
 }
