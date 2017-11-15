@@ -47,7 +47,7 @@ public class U12A1
 			}
 		}
 		
-		System.out.printf("%.1f", stack.peekTop());
+		System.out.printf("%.1f", arraystack.peekTop());
 		System.out.println();
 	}
 }
