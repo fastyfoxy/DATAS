@@ -20,22 +20,23 @@ public class U12A1
 	public U12A1()
 	{
 		evaluate(stack1, exp1);
-		evaluate(stack2, exp2);
 	}
 
 	public void evaluate(ArrayStack arraystack, String str)
 	{
 		StringTokenizer st = new StringTokenizer(str);
 
-		while (st.hasMoreTokens())
+		while(st.hasMoreTokens())
 		{
-			if(st.nextToken().parseInt() instanceof Integer)
-				arraystack.push(st.nextToken());
+			String s = st.nextToken();
+
+			if(isInteger(s))
+				arraystack.push(s);
 			else
 			{
-				Integer operand1 = arraystack.pop();
-				Integer operand2 = arraystack.pop();
-				
+				Integer operand1 = (Integer) arraystack.pop();
+				Integer operand2 = (Integer) arraystack.pop();
+
 				if(st.nextToken().equals("+"))
 					arraystack.push(operand2+operand1);
 				if(st.nextToken().equals("-"))
@@ -46,8 +47,21 @@ public class U12A1
 					arraystack.push(operand2/operand1);
 			}
 		}
-		
+
 		System.out.printf("%.1f", arraystack.peekTop());
 		System.out.println();
+	}
+
+	public boolean isInteger(String str)
+	{
+	    try
+	    {
+	        Integer.parseInt(str);
+	        return true;
+	    }
+	    catch(Exception e)
+	    {
+	        return false;
+	    }
 	}
 }
