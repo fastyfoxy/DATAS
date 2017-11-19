@@ -2,8 +2,6 @@
 //
 // This program will test the methods of Stack, and ArrayStack.
 
-//TODO: solve double problem, is currently optimized for int
-
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 
@@ -25,46 +23,34 @@ public class U12A1
 		evaluate(stack2, exp2);
 	}
 
-	public void evaluate(ArrayStack arraystack, String str)
+	public void evaluate(ArrayStack arraystack, String string)
 	{
-		StringTokenizer st = new StringTokenizer(str);
+		StringTokenizer st = new StringTokenizer(string);
+		String s = "";
 
 		while(st.hasMoreTokens())
 		{
-			String s = st.nextToken();
+			s = st.nextToken();
 
-			if(isInteger(s))
-				arraystack.push(Integer.valueOf(s));
-			else
+			if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/"))
 			{
-				Integer operand1 = (Integer) arraystack.pop();
-				Integer operand2 = (Integer) arraystack.pop();
+				double operand1 = (new Double(arraystack.pop().toString())).doubleValue();
+				double operand2 = (new Double(arraystack.pop().toString())).doubleValue();
 
 				if(s.equals("+"))
-					arraystack.push(operand2+operand1);
+					arraystack.push(""+(operand2+operand1));
 				if(s.equals("-"))
-					arraystack.push(operand2-operand1);
+					arraystack.push(""+(operand2-operand1));
 				if(s.equals("*"))
-					arraystack.push(operand2*operand1);
+					arraystack.push(""+(operand2*operand1));
 				if(s.equals("/"))
-					arraystack.push(operand2/operand1);
+					arraystack.push(""+(operand2/operand1));
 			}
+			else
+				arraystack.push(s);
 		}
 
-		System.out.printf("The Answer is %.1f",(double)((Integer)arraystack.peekTop()).intValue());
+		System.out.printf("The Answer is %.1f",(new Double(arraystack.pop().toString())).doubleValue());
 		System.out.println();
-	}
-
-	public boolean isInteger(String str)
-	{
-	    try
-	    {
-	        Integer.parseInt(str);
-	        return true;
-	    }
-	    catch(Exception e)
-	    {
-	        return false;
-	    }
 	}
 }
