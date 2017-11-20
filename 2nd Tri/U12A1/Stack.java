@@ -1,6 +1,6 @@
 // Tariq
 //
-// This interface will set up a Stack.
+// This interface will define a Stack.
 
 public interface Stack
 {

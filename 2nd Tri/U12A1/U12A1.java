@@ -26,11 +26,10 @@ public class U12A1
 	public void evaluate(ArrayStack arraystack, String string)
 	{
 		StringTokenizer st = new StringTokenizer(string);
-		String s = "";
 
 		while(st.hasMoreTokens())
 		{
-			s = st.nextToken();
+			String s = st.nextToken();
 
 			if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/"))
 			{
