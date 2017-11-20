@@ -3,7 +3,6 @@
 // This program will test the methods of Stack, and ArrayStack.
 
 import java.util.StringTokenizer;
-import java.util.ArrayList;
 
 public class U12A1
 {

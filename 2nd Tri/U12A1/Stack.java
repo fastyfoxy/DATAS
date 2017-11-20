@@ -8,7 +8,7 @@ public interface Stack
 	// return true if stack has no elements, false otherwise.
 
 	void push(Object obj);
-	// pushes an elemnt onto the stack.
+	// pushes an element onto the stack.
 
 	Object pop();
 	// pops an element off the stack and returns it.
