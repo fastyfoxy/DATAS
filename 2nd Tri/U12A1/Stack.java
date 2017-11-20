@@ -1,4 +1,5 @@
 // Tariq
+//
 // This interface will set up a Stack.
 
 public interface Stack

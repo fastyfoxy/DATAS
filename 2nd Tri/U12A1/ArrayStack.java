@@ -39,5 +39,4 @@ public class ArrayStack implements Stack
 
 		return elements.get(elements.size()-1);
 	}
-
 }

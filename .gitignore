@@ -1,7 +1,7 @@
 # Compiled class file
 *.class
 
-# Batch operation file
+# Windows Batch file
 *.bat
 
 # Log file
