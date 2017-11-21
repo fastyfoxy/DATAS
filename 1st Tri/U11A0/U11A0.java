@@ -1,5 +1,3 @@
-// Tariq
-//
 // This program will simulate a game of Hunt the Wompus.
 
 import java.util.ArrayList;

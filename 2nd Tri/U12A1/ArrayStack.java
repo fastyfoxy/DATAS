@@ -1,5 +1,3 @@
-// Tariq
-//
 // This program will use an ArrayList to create a Stack.
 
 import java.util.ArrayList;

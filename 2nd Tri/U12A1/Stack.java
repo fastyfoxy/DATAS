@@ -1,5 +1,3 @@
-// Tariq
-//
 // This interface will define a Stack.
 
 public interface Stack

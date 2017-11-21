@@ -1,5 +1,3 @@
-// Tariq
-//
 // This program will test the methods of Stack, and ArrayStack.
 
 import java.util.StringTokenizer;
