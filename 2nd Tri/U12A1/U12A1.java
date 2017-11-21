@@ -6,8 +6,8 @@ public class U12A1
 {
 	private ArrayStack stack1 = new ArrayStack();
 	private ArrayStack stack2 = new ArrayStack();
-	String exp1 = "5 2 + 8 5 - *";
-	String exp2 = "4 7 * 4 9 - /";
+	private String exp1 = "5 2 + 8 5 - *";
+	private String exp2 = "4 7 * 4 9 - /";
 
 	public static void main(String[] args)
 	{
