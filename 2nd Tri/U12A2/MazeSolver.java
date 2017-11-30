@@ -16,11 +16,15 @@ public class MazeSolver
 	{
 		try
 		{
-			ArrayStack temp = new ArrrayStack();
+			String[] temp = new String[10];
+			int c;
 			
 			Scanner in = new Scanner(new File("prg1071a.txt"));
 			while(in.hasNext())
-				temp.push(in.nextLine());
+			{
+				temp[c] = in.nextLine();
+				c++;
+			}
 			
 			for(int i=0; i<10; i++)
 				stack.push(temp.pop());
