@@ -14,14 +14,16 @@ public class MazeSolver
 
 	public MazeSolver()
 	{
-		int xPos = 2;
-		int yPos = 1;
-
 		try
 		{
+			ArrayStack temp = new ArrrayStack();
+			
 			Scanner in = new Scanner(new File("prg1071a.txt"));
 			while(in.hasNext())
-				stack.push(in.nextLine());
+				temp.push(in.nextLine());
+			
+			for(int i=0; i<10; i++)
+				stack.push(temp.pop());
 		}
 		catch(IOException e)
 		{
@@ -35,17 +37,12 @@ public class MazeSolver
 			failed();
 	}
 
-	public void printStack(int x, int y)
+	public void printStack(ArrayStack stack)
 	{
 		System.out.println("Maze:");
-
-		String[] a = new String[10];
-
-		for(int i=0; i<10; i++)
-			a[i] = (String)stack.pop();
-
-		for(int i=10; i>0; i--)
-			System.out.println(a[i-1]);
+		
+		for(int i=0; i<0; i++)
+			System.out.println(stack.pop());
 
 		System.out.println();
 		System.out.println("Starting position: ("+x+", "+y+")");
