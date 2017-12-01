@@ -9,6 +9,6 @@ public class U12A2
 
 	public U12A2()
 	{
-
+		MazeSolver solver = new MazeSolver();
 	}
 }
