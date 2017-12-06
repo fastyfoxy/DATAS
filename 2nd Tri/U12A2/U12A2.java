@@ -6,7 +6,7 @@ import java.io.*;
 public class U12A2
 {
 	private ArrayStack stack = new ArrayStack();
-	private String[10][10] maze;
+	private String[][] maze = new String[10][10];
 
 	public static void main(String[] args)
 	{
@@ -15,20 +15,28 @@ public class U12A2
 
 	public U12A2()
 	{
-		fillArray();
-		findRoute();
+		fill();
+	//	findRoute();
+		printStack(stack);
+	//	printRoute(stack);
 	}
-	
-	public void fillArray()
+
+	public void fill()
 	{
 		try
 		{
-			int c;
-			
 			Scanner in = new Scanner(new File("prg1071a.txt"));
-			while(in.hasNext())					// fill maze with prg1071a
+			int c=0;
+
+			while(in.hasNext())
 			{
-				
+				String line = in.nextLine();
+
+				for(int i=0; i<10; i++)
+				{
+					maze[c][i] = line.substring(i, i+1);
+				}
+				c++;
 			}
 		}
 		catch(IOException e)
@@ -36,33 +44,48 @@ public class U12A2
 			throw new RuntimeException(e.toString());
 		}
 
-		printStack(xPos, yPos);
+		for(int i=0; i<10; i++)
+			for(int j=0; j<10; j++)
+				if(maze[i][j].equals("S"))
+					stack.push(i+","+j);
 	}
 
 	public void printStack(ArrayStack stack)
 	{
 		System.out.println("Maze:");
-		
-		for(int i=0; i<0; i++)
-			System.out.println(stack.pop());
 
-		System.out.println();
-		System.out.println("Starting position: ("+x+", "+y+")");
+		for(int i=0; i<10; i++)
+		{
+			for(int j=0; j<10; j++)
+				System.out.print(maze[i][j]);
+
+			System.out.println();
+		}
+
+		System.out.println("\n"+"Starting position: ("+stack.peekTop()+")");
+	}
+
+	public void printRoute(ArrayStack stack)
+	{
+		for(int i=0; !stack.isEmpty(); i++)
+		{
+			if(i%9 == 0)
+				System.out.println();
+			System.out.print(stack.pop()+"  ");
+		}
 	}
 
 	public void findRoute()
 	{
 		for(int i=0; i<10; i++)
-		{
 			for(int j=0; j<10; j++)
-			{
-				if(maze[i][j].equals("S")
-				   {
-					   
-				   }
-			}
-		}
-		for(;;;)
-	
+				if(maze[i][j].equals("S"))
+				{
+
+				}
+
+		/*for(;;)
+		{
+		}*/
 	}
 }
