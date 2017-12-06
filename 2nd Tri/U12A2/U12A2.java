@@ -53,11 +53,16 @@ public class U12A2
 	public void findRoute()
 	{
 		for(int i=0; i<10; i++)
+		{
 			for(int j=0; j<10; j++)
+			{
 				if(maze[i][j].equals("S")
 				   {
-					   stack.push(i+", "+j);
+					   
 				   }
-		
+			}
+		}
+		for(;;;)
+	
 	}
 }
