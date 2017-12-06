@@ -6,6 +6,7 @@ import java.io.*;
 public class U12A2
 {
 	private ArrayStack stack = new ArrayStack();
+	private String[10][10] maze;
 
 	public static void main(String[] args)
 	{
@@ -14,20 +15,21 @@ public class U12A2
 
 	public U12A2()
 	{
+		fillArray();
+		findRoute();
+	}
+	
+	public void fillArray()
+	{
 		try
 		{
-			String[] temp = new String[10];
 			int c;
 			
 			Scanner in = new Scanner(new File("prg1071a.txt"));
-			while(in.hasNext())
+			while(in.hasNext())					// fill maze with prg1071a
 			{
-				temp[c] = in.nextLine();
-				c++;
+				
 			}
-			
-			for(int i=0; i<10; i++)
-				stack.push(temp.pop());
 		}
 		catch(IOException e)
 		{
@@ -35,10 +37,6 @@ public class U12A2
 		}
 
 		printStack(xPos, yPos);
-		if(findRoute())
-			printRoute();
-		else
-			failed();
 	}
 
 	public void printStack(ArrayStack stack)
@@ -52,18 +50,14 @@ public class U12A2
 		System.out.println("Starting position: ("+x+", "+y+")");
 	}
 
-	public boolean findRoute()
+	public void findRoute()
 	{
-		return false;
-	}
-
-	public void failed()
-	{
-
-	}
-
-	public void printRoute()
-	{
-
+		for(int i=0; i<10; i++)
+			for(int j=0; j<10; j++)
+				if(maze[i][j].equals("S")
+				   {
+					   stack.push(i+", "+j);
+				   }
+		
 	}
 }
