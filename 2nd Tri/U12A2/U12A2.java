@@ -16,9 +16,9 @@ public class U12A2
 	public U12A2()
 	{
 		fill();
-	//	findRoute();
-		printStack(stack);
-	//	printRoute(stack);
+		findRoute();
+		print(stack);
+		printRoute(stack);
 	}
 
 	public void fill()
@@ -48,7 +48,7 @@ public class U12A2
 					stack.push(i+","+j);
 	}
 
-	public void printStack(ArrayStack stack)
+	public void print(ArrayStack stack)
 	{
 		System.out.println("Maze:");
 
@@ -75,20 +75,96 @@ public class U12A2
 
 	public void findRoute()
 	{
-		for(int i=0; i<10; i++)					// FINDS STARTING POINT (2, 1)
-			for(int j=0; j<10; j++)
-				if(maze[i][j].equals("S"))
-					stack.push(i+", "+j);		// PUSHES TO STACK
-		
-		for(;;)
+		int vS = Integer.parseInt((((String)stack.peekTop()).substring(0, 1)));
+		int hS = Integer.parseInt((((String)stack.peekTop()).substring(2)));
+
+		for(int i=0;i<99;i++)
 		{
-			if()
-			if()
-			if()
-			if()
+			if(maze[vS-1][hS].equals("0") || maze[vS-1][hS].equals("E"))		// check up
+			{
+				stack.push((vS-1)+","+hS);
+				vS--;
+			}
+			else if(maze[vS][hS+1].equals("0") || maze[vS][hS+1].equals("E"))	// check right
+			{
+				stack.push(vS+","+(hS+1));
+				hS++;
+			}
+			else if(maze[vS+1][hS].equals("0") || maze[vS+1][hS].equals("E"))	// check down
+			{
+				stack.push((vS+1)+","+hS);
+				vS++;
+			}
+			else if(maze[vS][hS-1].equals("0") || maze[vS][hS-1].equals("E"))	// check left
+			{
+				stack.push(vS+","+(hS-1));
+				hS++;
+			}
+
+			maze[vS][hS] = "X";
+
+			if(stack.isEmpty())
+			{
+				System.out.println("There is nowhere to move.");
+				break;
+			}
 		}
-		// <ROUTE FINDER>
-		// look up, right, left, down
-		// 
+
+/*		for(int i=0;i<99;i++)
+		{
+			if(maze[vS-1][hS].equals("0") || maze[vS-1][hS].equals("E"))		// check up
+			{
+				System.out.println("up");
+				stack.push((vS-1)+","+hS);
+				vS--;
+
+				if(maze[vS-1][hS].equals("E"))
+				{
+					System.out.println("Found the Exit!");
+					break;
+				}
+			}
+			else if(maze[vS][hS+1].equals("0") || maze[vS][hS+1].equals("E"))	// check right
+			{
+				System.out.println("right");
+				stack.push(vS+","+(hS+1));
+				hS++;
+
+				if(maze[vS][hS+1].equals("E"))
+				{
+					System.out.println("Found the Exit!");
+					break;
+				}
+			}
+			else if(maze[vS+1][hS].equals("0") || maze[vS+1][hS].equals("E"))	// check down
+			{
+				System.out.println("down");
+				stack.push((vS+1)+","+hS);
+				vS++;
+
+				if(maze[vS+1][hS].equals("E"))
+				{
+					System.out.println("Found the Exit!");
+					break;
+				}
+			}
+			else if(maze[vS][hS-1].equals("0") || maze[vS][hS-1].equals("E"))	// check left
+			{
+				System.out.println("left");
+				stack.push(vS+","+(hS-1));
+				hS--;
+
+				if(maze[vS][hS-1].equals("E"))
+				{
+					System.out.println("Found the Exit!");
+					break;
+				}
+			}
+			else																// give up and cry
+			{
+				System.out.println("There is nowhere to move.");
+				break;
+			}
+		}*/
 	}
 }
