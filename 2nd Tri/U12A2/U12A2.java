@@ -33,9 +33,7 @@ public class U12A2
 				String line = in.nextLine();
 
 				for(int i=0; i<10; i++)
-				{
 					maze[c][i] = line.substring(i, i+1);
-				}
 				c++;
 			}
 		}
@@ -77,15 +75,11 @@ public class U12A2
 
 	public void findRoute()
 	{
-		for(int i=0; i<10; i++)
+		for(int i=0; i<10; i++)					// FINDS STARTING POINT (2, 1)
 			for(int j=0; j<10; j++)
 				if(maze[i][j].equals("S"))
-				{
-
-				}
-
-		/*for(;;)
-		{
-		}*/
+					stack.push(i+", "+j);
+		
+		// <ROUTE FINDER>
 	}
 }
