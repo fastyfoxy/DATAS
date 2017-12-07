@@ -78,9 +78,10 @@ public class U12A2
 		for(int i=0; i<10; i++)					// FINDS STARTING POINT (2, 1)
 			for(int j=0; j<10; j++)
 				if(maze[i][j].equals("S"))
-					stack.push(i+", "+j);
+					stack.push(i+", "+j);		// PUSHES TO STACK
 		
 		// <ROUTE FINDER>
 		// look up, right, left, down
+		// 
 	}
 }
