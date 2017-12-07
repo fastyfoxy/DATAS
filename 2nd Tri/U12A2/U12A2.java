@@ -80,6 +80,13 @@ public class U12A2
 				if(maze[i][j].equals("S"))
 					stack.push(i+", "+j);		// PUSHES TO STACK
 		
+		for(;;)
+		{
+			if()
+			if()
+			if()
+			if()
+		}
 		// <ROUTE FINDER>
 		// look up, right, left, down
 		// 
