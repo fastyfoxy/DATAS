@@ -81,5 +81,6 @@ public class U12A2
 					stack.push(i+", "+j);
 		
 		// <ROUTE FINDER>
+		// look up, right, left, down
 	}
 }
