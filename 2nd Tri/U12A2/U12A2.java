@@ -80,21 +80,28 @@ public class U12A2
 
 		for(int i=0;i<99;i++)
 		{
+			if(maze[vS][hS].equals("E"))
+				System.out.println("Found the exit!");				// if current is exit
+				break;	
+			
 			if(maze[vS-1][hS].equals("0") || maze[vS-1][hS].equals("E"))		// check up
 			{
 				stack.push((vS-1)+","+hS);
 				vS--;
 			}
+			
 			else if(maze[vS][hS+1].equals("0") || maze[vS][hS+1].equals("E"))	// check right
 			{
 				stack.push(vS+","+(hS+1));
 				hS++;
 			}
+			
 			else if(maze[vS+1][hS].equals("0") || maze[vS+1][hS].equals("E"))	// check down
 			{
 				stack.push((vS+1)+","+hS);
 				vS++;
 			}
+			
 			else if(maze[vS][hS-1].equals("0") || maze[vS][hS-1].equals("E"))	// check left
 			{
 				stack.push(vS+","+(hS-1));
