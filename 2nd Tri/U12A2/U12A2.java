@@ -16,7 +16,7 @@ public class U12A2
 	public U12A2()
 	{
 		fill();
-		print(stack);
+		print();
 		findRoute();
 	}
 
@@ -25,15 +25,13 @@ public class U12A2
 		try
 		{
 			Scanner in = new Scanner(new File("prg1071a.txt"));
-			int c=0;
 
-			while(in.hasNext())
+			for(int c=0; in.hasNext(); c++)
 			{
 				String line = in.nextLine();
 
 				for(int i=0; i<10; i++)
 					maze[c][i] = line.substring(i, i+1);
-				c++;
 			}
 		}
 		catch(IOException e)
@@ -47,7 +45,7 @@ public class U12A2
 					stack.push(i+","+j);
 	}
 
-	public void print(ArrayStack stack)
+	public void print()
 	{
 		System.out.println("Maze:");
 
@@ -69,7 +67,7 @@ public class U12A2
 
 		System.out.print("Locations:\n"+vS+","+hS+"  ");
 
-		for(int i=1;i<100;i++)
+		for(int i=1;;i++)
 		{
 			if(maze[vS][hS].equals("E"))
 			{
