@@ -78,7 +78,7 @@ public class U12A2
 		int vS = Integer.parseInt((((String)stack.peekTop()).substring(0, 1)));
 		int hS = Integer.parseInt((((String)stack.peekTop()).substring(2)));
 
-		for(int i=0;i<99;i++)
+		for(;;)
 		{
 			if(maze[vS][hS].equals("E"))
 				System.out.println("Found the exit!");				// if current is exit
@@ -87,28 +87,24 @@ public class U12A2
 			if(maze[vS-1][hS].equals("0") || maze[vS-1][hS].equals("E"))		// check up
 			{
 				stack.push((vS-1)+","+hS);
-				vS--;
 				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS][hS+1].equals("0") || maze[vS][hS+1].equals("E"))	// check right
 			{
 				stack.push(vS+","+(hS+1));
-				hS++;
 				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS+1][hS].equals("0") || maze[vS+1][hS].equals("E"))	// check down
 			{
 				stack.push((vS+1)+","+hS);
-				vS++;
 				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS][hS-1].equals("0") || maze[vS][hS-1].equals("E"))	// check left
 			{
 				stack.push(vS+","+(hS-1));
-				hS++;
 				maze[vS][hS] = "X";
 			}
 			
