@@ -88,27 +88,32 @@ public class U12A2
 			{
 				stack.push((vS-1)+","+hS);
 				vS--;
+				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS][hS+1].equals("0") || maze[vS][hS+1].equals("E"))	// check right
 			{
 				stack.push(vS+","+(hS+1));
 				hS++;
+				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS+1][hS].equals("0") || maze[vS+1][hS].equals("E"))	// check down
 			{
 				stack.push((vS+1)+","+hS);
 				vS++;
+				maze[vS][hS] = "X";
 			}
 			
 			else if(maze[vS][hS-1].equals("0") || maze[vS][hS-1].equals("E"))	// check left
 			{
 				stack.push(vS+","+(hS-1));
 				hS++;
+				maze[vS][hS] = "X";
 			}
-
-			maze[vS][hS] = "X";
+			
+			vS = Integer.parseInt((((String)stack.pop()).substring(0, 1)));
+			hS = Integer.parseInt((((String)stack.pop()).substring(2)));
 
 			if(stack.isEmpty())
 			{
