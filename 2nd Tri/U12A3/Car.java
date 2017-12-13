@@ -8,11 +8,17 @@ public class Car
 	{
 		arrival = min;
 		departure = 0;
+		wait_time = 0;
 	}
 
 	public int getArrival()
 	{
 		return arrival;
+	}
+
+	public void setDeparture(int x)
+	{
+		departure = x;
 	}
 
 	public int getDeparture()
@@ -24,4 +30,5 @@ public class Car
 	{
 		return departure-arrival;
 	}
+
 }

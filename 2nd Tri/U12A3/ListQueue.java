@@ -37,4 +37,9 @@ public class ListQueue implements Queue
 
 		return (list.getFirst());
 	}
+
+	public int getSize()
+	{
+		return list.size();
+	}
 }
