@@ -28,10 +28,11 @@ public class U12A3
 		for (int min=1; min<=600; min++)
 		{
 			if(generator.nextDouble() < prob_of_arrival)
-			{
 				queue.enqueue(min);
-				cars_washed++;
-			}
+			
+			if(!queue.isEmpty())
+				if(queue.getSize() == 1 || ((Integer)queue.peekFront()).intValue()-min==time_for_wash)
+			
 			if(min%5 == 0 && !queue.isEmpty())
 				average_wait_time += min - ((Integer)queue.dequeue()).intValue();
 		}
