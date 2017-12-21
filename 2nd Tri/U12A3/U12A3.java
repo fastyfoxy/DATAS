@@ -4,46 +4,55 @@ import java.util.Random;
 
 public class U12A3
 {
-	private ListQueue queue = new ListQueue();
+ private ListQueue queue = new ListQueue();
 
-	public static void main(String[] args)
-	{
-		U12A3 app = new U12A3();
-	}
+ public static void main(String[] args)
+ {
+  U12A3 app = new U12A3();
+ }
 
-	public U12A3()
-	{
-		System.out.println("Simulation 1:");
-		simulate(0.25, 5.0);
-		System.out.println("\n\nSimulation 2:");
-		simulate(0.25, 4.0);
-	}
+ public U12A3()
+ {
+  System.out.println("Simulation 1:");
+  simulate(0.25, 5.0);
+  System.out.println("\n\nSimulation 2:");
+  simulate(0.25, 4.0);
+ }
 
-	public void simulate(double prob_of_arrival, double time_for_wash)
-	{
-		Random generator = new Random();
-		double average_wait_time = 0.0;
-		int cars_washed = 0;
+ public void simulate(double prob_of_arrival, double time_for_wash)
+ {
+  Random generator = new Random();
+  double average_wait_time = 0.0;
+  int cars_washed = 0
 
-		for (int min=1; min<=600; min++)
-		{
-			if(generator.nextDouble() < prob_of_arrival)
-				queue.enqueue(min);
-			
-			if(!queue.isEmpty())
-				if(queue.getSize() == 1 || ((Integer)queue.peekFront()).intValue()-min==time_for_wash)
-			
-			if(min%5 == 0 && !queue.isEmpty())
-				average_wait_time += min - ((Integer)queue.dequeue()).intValue();
-		}
+  for (int min=1; min<=600; min++)
+  {
+   if(generator.nextDouble() < prob_of_arrival)
+   {
+    queue.enqueue(min);
+   }
+   
+   if(!queue.isEmpty())
+   {
+     if(queue.getSize()==1)
+     {
+       // average wait time is 0 for this car, so dont change it 
+     }
+     else if (((Integer)queue.peekFront()).intValue()-min==time_for_wash)
+     {
+       average_wait_time+= min - ((Integer)queue.peekFront()).intValue();
+       cars_washed++;
+     }
+   }
+  }
 
-		average_wait_time /= cars_washed;
+  average_wait_time /= cars_washed;
 
-		System.out.println("Car Wash Time\t\t= "+(int)time_for_wash+" mins");
-		System.out.println("Probability of Arrival\t= "+prob_of_arrival);
-		System.out.println("Numbers of cars washed\t= "+cars_washed);
-		System.out.println("Average wait in Queue\t= "+(int)average_wait_time+" mins");
-	}
+  System.out.println("Car Wash Time\t\t= "+(int)time_for_wash+" mins");
+  System.out.println("Probability of Arrival\t= "+prob_of_arrival);
+  System.out.println("Numbers of cars washed\t= "+cars_washed);
+  System.out.println("Average wait in Queue\t= "+(int)average_wait_time+" mins");
+ }
 }
 
 /*
