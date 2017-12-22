@@ -55,6 +55,7 @@ Simulation 1:
 Car Wash Time           = 5 mins
 Probability of Arrival  = 0.25
 Numbers of cars washed  = 143
+Average wait in Queue   = 26 mins
 Average wait in Queue   = 16 mins
 
 
