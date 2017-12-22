@@ -12,5 +12,5 @@ public interface Queue
 	// removes an element at the front of the queue and returns it.
 
 	Object peekFront();
-	// returns the element at the front of the queue without removing it
+	// returns the element at the front of the queue without removing it.
 }
