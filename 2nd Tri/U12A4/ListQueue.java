@@ -1,4 +1,4 @@
-// This interface will set up a ListQueue.
+// This program will set up a ListQueue.
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
