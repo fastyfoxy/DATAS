@@ -42,4 +42,9 @@ public class ListQueue implements Queue
 	{
 		return list.size();
 	}
+
+	public LinkedList getList()
+	{
+		return list;
+	}
 }

@@ -1,7 +1,6 @@
 // This class multiplies and simplifies polynomials using LinkedLists.
 
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class U11A1
 {
