@@ -76,6 +76,34 @@ public class U12A4
 /*
 OUTPUT:
 
-<paste>
+Processing Queue Report...
+End of Report
+
+Processing Queue Report...
+A11
+B12
+C13
+End of Report
+
+Pop accepted.
+Currently processing job: A11
+
+Pop accepted.
+Currently processing job: B12
+
+Pop accepted.
+Currently processing job: C13
+
+Pop denied.
+Cause: Empty Queue
+
+Processing Queue Report...
+C14
+End of Report
+
+Processing Queue Report...
+C14
+A15
+End of Report
 
 */
