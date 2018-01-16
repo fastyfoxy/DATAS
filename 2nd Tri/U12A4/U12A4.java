@@ -72,3 +72,10 @@ public class U12A4
 		System.out.println("End of Report\n");
 	}
 }
+
+/*
+OUTPUT:
+
+<paste>
+
+*/
