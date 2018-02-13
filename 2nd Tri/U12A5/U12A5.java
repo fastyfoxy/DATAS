@@ -16,25 +16,25 @@ public class U12A5
 	public U12A5()
 	{
 		Scanner in = new Scanner(System.in);
-		String cmd = "";
+		String task = "";
 		int num = 0;
 
 		for(;;)
 		{
 			System.out.print("Enter task: A)dd, D)elete, E)xit: ");
-			cmd = in.nextLine();
+			task = in.nextLine();
 
-			if(cmd.equalsIgnoreCase("A"))
+			if(task.equalsIgnoreCase("A"))
 			{
 				System.out.print("Enter number: ");
 				queue.enqueue(Integer.parseInt(in.nextLine()));
 			}
-			else if(cmd.equalsIgnoreCase("D"))
+			else if(task.equalsIgnoreCase("D"))
 			{
 				System.out.print("Enter number: ");
 				del(Integer.parseInt(in.nextLine()));
 			}
-			else if(cmd.equalsIgnoreCase("E"))
+			else if(task.equalsIgnoreCase("E"))
 			{
 				exit();
 			}
