@@ -136,6 +136,5 @@ This is the list
 7
 
 Enter task: A)dd, D)elete, E)xit: E
-Press any key to continue . . .
 
 */
