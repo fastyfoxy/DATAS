@@ -69,7 +69,7 @@ public class U12A5
 
 		while(iter.hasNext())
 		{
-			System.out.print(iter.next()+" ");			// list prints and dequeues
+			System.out.print(iter.next()+" ");
 		}
 
 		System.out.println("\n");
