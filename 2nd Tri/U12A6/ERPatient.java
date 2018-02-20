@@ -22,4 +22,9 @@ public class ERPatient
 	{
 		return name+"\t"+condition+"\t"+priority;
 	}
+
+	public boolean compareTo(ERPatient patient)
+	{
+		return (priority < patient.getPriority());
+	}
 }

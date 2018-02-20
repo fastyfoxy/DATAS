@@ -18,6 +18,7 @@ public class U12A6
 			while(in.hasNext())
 			{
 				String input = in.nextLine();
+				System.out.println(input);
 
 				if(input.substring(0,1).equals("P"))
 				{
@@ -25,10 +26,14 @@ public class U12A6
 
 					while(st.hasMoreTokens())
 					{
+						String n = st.nextToken()+st.nextToken();
+						String c;
+						System.out.println(n);
 					}
 				}
 				else
 				{
+
 				}
 			}
 		}
@@ -36,6 +41,11 @@ public class U12A6
 		{
 			throw new RuntimeException(e.toString());
 		}
+	}
+
+	public static void main(String[] args)
+	{
+
 	}
 }
 
