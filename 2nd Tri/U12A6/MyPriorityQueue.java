@@ -14,18 +14,12 @@ public class MyPriorityQueue
 
 	public void add(ERPatient patient)
 	{
-		add(patient);
-
-		// go thru the queue from lowest priority to highest
-		// comparing the getPriority()'s of the patients
-		// once the priority is the same place them there
-
-		// inside priorities FIFO
+		pq.add(patient);
 	}
 
-	public void removeMin()
+	public ERPatient removeMin()
 	{
-		pq.poll();
+		return pq.poll();
 	}
 
 	public boolean isEmpty()

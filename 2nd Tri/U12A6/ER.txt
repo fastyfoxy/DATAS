@@ -2,7 +2,7 @@ P Collins, Peter 	Broken Arm 		3
 P Moore, Tanya 		Trbl Breathing 		2
 P Jones, James 		Chest Pains 		1
 D Adams
-P Smith, Alice 		Noose Bleed 		3
+P Smith, Alice 		Nose Bleed 		3
 P Jacobs, Abel 		Trbl Urinating 		3
 D Patel
 P Thomas, Renee 	Head Injury 		1

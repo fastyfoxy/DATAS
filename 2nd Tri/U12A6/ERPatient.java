@@ -1,6 +1,6 @@
 // This program will represent an ER patient.
 
-public class ERPatient
+public class ERPatient implements Comparable
 {
 	private String name;
 	private String condition;
@@ -23,8 +23,8 @@ public class ERPatient
 		return name+"\t"+condition+"\t"+priority;
 	}
 
-	public boolean compareTo(ERPatient patient)
+	public int compareTo(Object o)
 	{
-		return (priority < patient.getPriority());
+		return priority - ((ERPatient)o).getPriority();
 	}
 }
